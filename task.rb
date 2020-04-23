@@ -137,7 +137,7 @@ def q15
   data2 = { name: "yamada", hobby: "baseball", role: "normal" }
 
   # 以下に回答を記載
-  
+
   puts data1.include?(:age)? "OK" : "NG"
   puts data2.include?(:age)? "OK" : "NG"
 end
@@ -158,7 +158,20 @@ end
 
 class UserQ17
   # 以下に回答を記載
+  def initialize(**params) #**を追加することでハッシュ[:name etc..]しか受け取れなくなる
+  #initializeはnewメソッドが呼び出された際に呼び出される
+    @name = params[:name] #インスタンス係数に引数を代入
+    @age = params[:age]
+    @gender = params[:gender]
+  end
 
+  def info
+    puts <<~EOS
+      名前:#{@name}
+      年齢:#{@age}
+      性別:#{@gender}
+    EOS
+  end
 end
 
 def q17
