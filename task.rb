@@ -158,9 +158,9 @@ end
 
 class UserQ17
   # 以下に回答を記載
-  def initialize(**params) #**を追加することでハッシュ[:name etc..]しか受け取れなくなる
-  #initializeはnewメソッドが呼び出された際に呼び出される
-    @name = params[:name] #インスタンス係数に引数を代入
+  def initialize(**params) # **を追加することでハッシュ[:name 他]しか受け取れなくなる
+  # 各パラメータをハッシュで取得
+    @name = params[:name]
     @age = params[:age]
     @gender = params[:gender]
   end
@@ -176,8 +176,8 @@ end
 
 def q17
   # ここは変更しないで下さい（ユーザー情報は変更していただいてOKです）
-  user1 = UserQ17.new(name: "神里", age: 32, gender: "男", admin: true)
-  user2 = UserQ17.new(name: "あじー", age: 32, gender: "男", admin: false)
+  user1 = UserQ17.new(name: "神里", age: 32, gender: "男")
+  user2 = UserQ17.new(name: "あじー", age: 32, gender: "男")
 
   user1.info
   puts "-------------"
